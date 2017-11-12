@@ -44,13 +44,17 @@ function initBarcodeScanner() {
 		console.log('Click work fine');
 		cordova.plugins.barcodeScanner.scan(
 			function (result) {
-				alert("We got a barcode\n" +
+				console.log("We got a barcode\n" +
 					"Result: " + result.text + "\n" +
 					"Format: " + result.format + "\n" +
 					"Cancelled: " + result.cancelled);
+
+					if (result.text && result.text.indexOf("http") > -1) {
+						window.location.href = result.text;
+					}
 			},
 			function (error) {
-				alert("Scanning failed: " + error);
+				console.log("Scanning failed: " + error);
 			}
 		);
 	});
