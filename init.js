@@ -30,7 +30,7 @@ function onDeviceReady() {
 	if (navigator.splashscreen) {
 		navigator.splashscreen.hide();
 	}
-	
+
 	// start the offline check now
 	appInit('device_ready');
 
@@ -40,24 +40,29 @@ function initBarcodeScanner() {
 
 	var iframe = $('#myApp').contents();
 	//scan-barcode
-	iframe.find('#header-widget-area').click(function (event) {
-		console.log('Click work fine');
-		cordova.plugins.barcodeScanner.scan(
-			function (result) {
-				console.log("We got a barcode\n" +
-					"Result: " + result.text + "\n" +
-					"Format: " + result.format + "\n" +
-					"Cancelled: " + result.cancelled);
+	iframe.find('#header-widget-area').off('click', clickHandler);
+	iframe.find('#header-widget-area').on('click', clickHandler);
+}
 
-					if (result.text && result.text.indexOf("http") > -1) {
-						window.location.href = result.text;
-					}
-			},
-			function (error) {
-				console.log("Scanning failed: " + error);
+function clickHandler(event) {
+
+	console.log('Click work fine');
+	cordova.plugins.barcodeScanner.scan(
+		function (result) {
+			console.log("We got a barcode\n" +
+				"Result: " + result.text + "\n" +
+				"Format: " + result.format + "\n" +
+				"Cancelled: " + result.cancelled);
+
+			if (result.text && result.text.indexOf("http") > -1) {
+				window.location.href = result.text;
 			}
-		);
-	});
+		},
+		function (error) {
+			console.log("Scanning failed: " + error);
+		}
+	);
+
 }
 
 function receiveMessage(e) {
