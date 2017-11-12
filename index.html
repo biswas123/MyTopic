@@ -35,21 +35,6 @@
         <script type="text/javascript">
             jQuery(document).ready( function() {
                 onLoad();
-
-                var wp = document.getElementById('myApp').contentWindow;
-                wp.document.getElementById("scan-barcode").addEventListener("click", function(){
-                        cordova.plugins.barcodeScanner.scan(
-                        function (result) {
-                            alert("We got a barcode\n" +
-                                "Result: " + result.text + "\n" +
-                                "Format: " + result.format + "\n" +
-                                "Cancelled: " + result.cancelled);
-                        }, 
-                        function (error) {
-                            alert("Scanning failed: " + error);
-                        }
-                    );
-                });
             });
 
         </script>
