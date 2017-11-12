@@ -21,7 +21,7 @@
     <platform name="android"></platform>
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="android-minSdkVersion" value="14" /><!-- Android 4.0 is minimum supported -->
-
+    <preference name="android-targetSdkVersion" value="22" />
     <gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>150</string></gap:config-file>
 
     <!-- You can comment out features you aren't using -->
@@ -134,6 +134,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="android-targetSdkVersion" value="22" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
