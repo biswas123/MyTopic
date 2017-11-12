@@ -30,13 +30,13 @@ function onDeviceReady() {
 	if (navigator.splashscreen) {
 		navigator.splashscreen.hide();
 	}
-	scanBarcode();
+	
 	// start the offline check now
 	appInit('device_ready');
 
 }
 
-function scanBarcode() {
+function initBarcodeScanner() {
 
 	var iframe = $('#myApp').contents();
 	//scan-barcode
@@ -120,6 +120,7 @@ function appInit(status) {
 
 		if (status == 'site_loaded') {
 			remote_resources.themejs.status = 'received';
+			initBarcodeScanner();
 		}
 
 		if (status == 'remote_pg_loaded') {
