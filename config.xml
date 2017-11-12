@@ -48,7 +48,7 @@
         <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app allows you to upload photos." />
     </gap:plugin>
 	
-	<gap:plugin name="cordova-plugin-barcodescanner" source="npm"/>
+	<gap:plugin name="cordova-plugin-barcodescanner" source="npm"  spec="0.7.0"/>
 
     <!-- You may want to allow Android to use this plugin too using AdMob in order to hide the banner ad when the Android keyboard is open. -->
     <platform name="ios">
