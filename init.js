@@ -40,8 +40,8 @@ function initBarcodeScanner() {
 
 	var iframe = $('#myApp').contents();
 	//scan-barcode
-	iframe.find('#header-widget-area').off('click', clickHandler);
-	iframe.find('#header-widget-area').on('click', clickHandler);
+	iframe.find('#scan-barcode').off('click', clickHandler);
+	iframe.find('#scan-barcode').on('click', clickHandler);
 }
 
 function clickHandler(event) {
@@ -55,7 +55,11 @@ function clickHandler(event) {
 				"Cancelled: " + result.cancelled);
 
 			if (result.text && result.text.indexOf("http") > -1) {
-				window.location.href = result.text;
+				setTimeout(function(){
+					window.location.href = result.text;
+				},200);
+			}else{
+				alert(result.text);
 			}
 		},
 		function (error) {
