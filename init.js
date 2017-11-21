@@ -56,7 +56,11 @@ function clickHandler(event) {
 
 			if (result.text && result.text.indexOf("http") > -1) {
 				setTimeout(function(){
-					window.location.href = result.text;
+					try{
+						window.location.href = result.text;
+					}catch(e){
+						location.href = result.text;
+					}					
 				},200);
 			}else{
 				alert(result.text);
