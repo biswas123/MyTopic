@@ -51,7 +51,10 @@
 	<gap:plugin name="cordova-plugin-barcodescanner" source="npm" spec="0.7.0">
 		<param name="CAMERA_USAGE_DESCRIPTION" value="To scan QR codes." />
 	</gap:plugin>
-
+	
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" >	
+	</gap:plugin>
+	
     <!-- You may want to allow Android to use this plugin too using AdMob in order to hide the banner ad when the Android keyboard is open. -->
     <platform name="ios">
         <gap:plugin name="ionic-plugin-keyboard" source="npm" spec="2.2.1" />
