@@ -57,7 +57,7 @@ function clickHandler(event) {
 			if (result.text && result.text.indexOf("http") > -1) {
 				setTimeout(function(){
 					try{
-						cordova.InAppBrowser.open(encodeURI(result.text), '_blank', 'location=no');
+						cordova.InAppBrowser.open(encodeURI(result.text), '_blank', 'location=no', 'closebuttoncaption=zurück');
 						//window.location.href = result.text;
 					}catch(e){
 						location.href = result.text;
