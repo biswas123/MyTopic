@@ -57,14 +57,14 @@ function clickHandler(event) {
 			if (result.text && result.text.indexOf("http") > -1) {
 				setTimeout(function(){
 					try{
-						cordova.InAppBrowser.open(encodeURI(result.text), '_blank', 'location=yes');
+						cordova.InAppBrowser.open(encodeURI(result.text), '_blank', 'location=no');
 						//window.location.href = result.text;
 					}catch(e){
 						location.href = result.text;
 					}					
 				},200);
 			}else{
-				alert(result.text);
+				//alert(result.text);
 			}
 		},
 		function (error) {
